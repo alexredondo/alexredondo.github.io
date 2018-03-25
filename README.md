@@ -10,7 +10,7 @@
 
 <!-- cc -->
 ## Table of Contents
-**Hola**
+
 - [Introduction](#introduction)
 - [latest version URL support](#latest-version-url-support)
 - [Contributing](#contributing)
