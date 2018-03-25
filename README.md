@@ -1,5 +1,5 @@
-# alexredondo.github.io
-
+# Repositorio de la Marca Personal de Alexander Redondo Florez
+<!-- INVESTIGAR Cómo adaptar esto -->
 ﻿[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/cdnjs/cdnjs/issues?utf8=%E2%9C%93&q=is%3Aopen%20is%3Aissue%20label%3AHacktoberfest%20-label%3A%22in%20progress%22%20)
 ﻿[![Drone CI](https://ci.cdnjs.com/api/badges/cdnjs/cdnjs/status.svg?branch=master)](https://ci.cdnjs.com/cdnjs/cdnjs)
 ﻿[![Dependency Status](https://david-dm.org/cdnjs/cdnjs.svg?theme=shields.io)](https://david-dm.org/cdnjs/cdnjs) [![devDependency Status](https://david-dm.org/cdnjs/cdnjs/dev-status.svg?theme=shields.io)](https://david-dm.org/cdnjs/cdnjs#info=devDependencies)
@@ -9,8 +9,8 @@
 
 [![Throughput Graph](https://graphs.waffle.io/cdnjs/cdnjs/throughput.svg)](https://waffle.io/cdnjs/cdnjs/metrics/throughput)
 
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+<!-- cc -->
 ## Table of Contents
 
 - [Introduction](#introduction)
