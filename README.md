@@ -21,7 +21,7 @@
 This is the main repository. My goal is to record all exercises in classes Platzi and watch the progress as time passes.
 
 
-## Careers
+## Careers and courses
 
 ### Marca Personal
 
