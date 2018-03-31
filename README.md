@@ -6,7 +6,7 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [Careers and courses](#careers and courses)
+- [Careers and courses](#careers-and-courses)
 
 <!-- - [latest version URL support](#latest-version-url-support)
 - [API usage](#api-usage)
