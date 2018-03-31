@@ -1,5 +1,5 @@
 # My timeline in @platzi
-_____
+
 ...if you like to teach and technology follow...
 [Twittter](https://twitter.com/alexredondo) | [LinkedIn](https://www.linkedin.com/in/alexander-fabian-redondo-florez-990596b/) | [Platzi](https://platzi.com/@alexredondo/)
 
