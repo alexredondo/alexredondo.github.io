@@ -6,9 +6,9 @@
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Careers and courses](#careers and courses)
 
 <!-- - [latest version URL support](#latest-version-url-support)
-- [Contributing](#contributing)
 - [API usage](#api-usage)
 - [Extensions, Plugins, Resources](#extensions-plugins-resources)
 - [Contributors](#contributors)
@@ -18,6 +18,13 @@
 
 ## Introduction
 
-This is the main repository 
+This is the main repository. My goal is to record all exercises in classes Platzi and watch the progress as time passes.
 
 
+## Careers
+
+### Marca Personal
+
+### Fundamentos de Programación
+
+#### Peso en otro planeta
