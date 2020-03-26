@@ -45,9 +45,17 @@
 <!-- FIN DE CONTENEDORES DE MÓDULOS -->
 
 <!-- START SCRIPT -->
-<script>
+
+<!-- SCRIPT GENERADORES DE CONTENEDORES -->
+<Script languaje="javascript"> 
+  var student_pin = prompt("🔑 Por favor ingrese su PIN de estudiante. Si se le olvido o no lo tiene comunicarse con la teacher.💬"); // Ingreso del PIN
+    if (student_pin != null) 
+     {
+
+
 // 1. MÓDULO DE DATOS PERSONALES: SPREEDSHHET: alexredondo@academia.net.co => estudianteDbAcademia 
    document.getElementById("datos_personales").innerHTML = "<div id='perfil_estudiante' class='marco_prueba' data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso="+student_pin+"'"+">                                                                                                                  <div class='mediacard'><div class='img_mediacard'> <img src='https://4.bp.blogspot.com/-c2R8ISSDx7E/XmNBM0R16rI/AAAAAAAAu9Q/UKdfZH-uM9MdFJGr9_vP-5pu2g-ClG7IACKgBGAsYHg/s1600/VID_20200219_202346.mp4' alt='Placeholder'>                                                                   </div>            <h2 class='title_mediacard'>👨‍🎓 Datos del Estudiante</h2>             <div class='content_mediacard'>                  <div class='encabezado_card'><b>Estudiante:</b><br> {{nombre_1}} {{nombre_2}}<br> {{apellido_1}} {{apellido_2}}<br><b>Grado:</b> {{grado}} | <b>Grupo:</b> {{grupo}}                  </div>                         <hr>                <b>Tipo de Documento: </b> {{tipo_doc}}<br>                <b>NUIP: </b> {{nuip}} <br>                <b>Fecha Nac: </b> {{fecha_nac}}<br>                <b>Edad: </b>{{edad}}<br>                <b>Sexo: </b> {{sexo}}<br>                <b>RH: </b> {{rh}}<br>                <b>Dirección: </b> {{direccion}}<br>                <b>Barrio: </b>{{barrio}}              </div>                   <div class='mediacard'>               <div class='content_mediacard'>                    <div class='encabezado_card'><b>👨 Datos del padre</b><br>                    </div>                    <hr>                  <b>Nombre: </b> {{nombre_papa}}<br>                  <b>CC: </b> {{cedula_papa}} <br>                  <b>Celular: </b> {{celular_1}}<br>                  <b>Ocupación: </b>{{ocupa_padre}}<br>              </div>      </div>      <div class='mediacard'>             <div class='content_mediacard'>                  <div class='encabezado_card'><b>👩 Datos de la madre</b><br>                  </div>                  <hr>                <b>Nombre: </b> {{nombre_mama}}<br>                <b>CC: </b>{{cedula_mama}}<br>                <b>Celular: </b> {{celular_2}}<br>                <b>Ocupación: </b>{{ocupa_madre}}<br>            </div>      </div>      <div class='mediacard'>              <div class='content_mediacard'>                  <div class='encabezado_card'><b>👨‍👦 Acudiente</b><br>                  </div>                  <hr>                <b>Nombre: </b>{{acudiente}}<br>                <b>CC: </b>{{cedula_acud}}<br>                <b>Celular: </b>{{celular_acud}}<br>                <b>Ocupación: </b>{{ocupa_madre}}<br>                <b>Email: </b>{{email_acud}}<br>                <b>Dirección: </b>{{parenteso}}<br>             </div>      </div>      <div class='footer_mediacard'>              <b>Comentario: </b>              <a href='https://wa.me/573017495229?text= Quiero que actualicen los datos de _{{nombre_1}} {{apellido_1}}_ del grado {{grado}}'>                  <i class='fa fa-whatsapp' style='font-size: 150%; padding-left: 10px;'></i></a>      </div>             </div></div>";
+  }
 </script>
 
 <!-- START SCRIPT VUE.JS -->
