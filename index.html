@@ -1,191 +1,48 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Prueba Git</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
 </head>
 <body>
-  <a href="/estudiante.html" style="background-color: gray;">Estudiante</a>
-<!-- RECAUDOS -->
-<style type="text/css">
- table.tablaRecaudo {
-  border: 1px solid #1C6EA4;
-  background-color: #EEEEEE;
-  width: 100%;
-  text-align: right;
-  border-collapse: collapse;
-}
-table.tablaRecaudo td, table.tablaRecaudo th {
-  border: 1px solid #AAAAAA;
-  padding: 3px 2px;
-}
-table.tablaRecaudo tbody td {
-  font-size: 13px;
-}
-table.tablaRecaudo tr:nth-child(even) {
-  background: #D0E4F5;
-}
-table.tablaRecaudo thead {
-  background: #1C6EA4;
-  background: -moz-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: -webkit-linear-gradient(top, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  background: linear-gradient(to bottom, #5592bb 0%, #327cad 66%, #1C6EA4 100%);
-  border-bottom: 2px solid #444444;
-}
-table.tablaRecaudo thead th {
-  font-size: 15px;
-  font-weight: bold;
-  text-align: center;
-  color: #FFFFFF;
-  border-left: 2px solid #D0E4F5;
-}
-table.tablaRecaudo thead th:first-child {
-  border-left: none;
-}
-  
+  <div id="app">
+    <v-app>
+      <v-content>
+        <v-container>Hello world</v-container>
+      </v-content>
+    </v-app>
+   
+    <template>
+  <div>
+    <v-alert type="success">
+      I'm a success alert.
+    </v-alert>
 
+    <v-alert type="info">
+      I'm an info alert.
+    </v-alert>
 
-</style>
+    <v-alert type="warning">
+      I'm a warning alert.
+    </v-alert>
 
-
-
-
-<!-- ///////////////////////////////// START SCRIPT API SHEET ///////////////////////////////// -->
-
-<script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.0.6.js"></script>
-
-<!-- ///////////////////////////////// END SCRIPT API SHEET ///////////////////////////////// -->
-
-
-<!-- ///////////////////////////////// START CONTENT ///////////////////////////-->
-
-<!-- CONTENEDORES DE MÓDULOS -->
-<!-- CONTENEDOR DE DATOS PERSONALES -->
-<div id="datos_personales" class="contenedor_modulos"></div> 
-
-<!-- CONTENEDOR SEGUIMIENTO ESTUDIANTES -->
-<div id="seguimiento_estudiantes" class="contenedor_modulos"></div> 
-
-<!-- CONTENEDOR DEL REGISTRO DE PAGOS -->
-<div id="registro_pagos" class="contenedor_modulos"></div> 
-
-<!-- FIN DE CONTENEDORES DE MÓDULOS -->
-
-<!-- SCRIPT GENERADORES DE CONTENEDORES -->
-<Script languaje="javascript"> 
-  var student_pin = prompt("🔑 Por favor ingrese su PIN de estudiante. Si se le olvido o no lo tiene comunicarse con la teacher.💬"); // Ingreso del PIN
-    if (student_pin != null) 
-     {
-
-
-// 1. MÓDULO DE DATOS PERSONALES: SPREEDSHHET: alexredondo@academia.net.co => estudianteDbAcademia 
-   document.getElementById("datos_personales").innerHTML = "<div id='perfil_estudiante' class='marco_prueba' data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso="+student_pin+"'"+">                                                                                                                  <div class='mediacard'><div class='img_mediacard'> <img src='https://4.bp.blogspot.com/-c2R8ISSDx7E/XmNBM0R16rI/AAAAAAAAu9Q/UKdfZH-uM9MdFJGr9_vP-5pu2g-ClG7IACKgBGAsYHg/s1600/VID_20200219_202346.mp4' alt='Placeholder'>                                                                   </div>            <h2 class='title_mediacard'>👨‍🎓 Datos del Estudiante</h2>             <div class='content_mediacard'>                  <div class='encabezado_card'><b>Estudiante:</b><br> {{nombre_1}} {{nombre_2}}<br> {{apellido_1}} {{apellido_2}}<br><b>Grado:</b> {{grado}} | <b>Grupo:</b> {{grupo}}                  </div>                         <hr>                <b>Tipo de Documento: </b> {{tipo_doc}}<br>                <b>NUIP: </b> {{nuip}} <br>                <b>Fecha Nac: </b> {{fecha_nac}}<br>                <b>Edad: </b>{{edad}}<br>                <b>Sexo: </b> {{sexo}}<br>                <b>RH: </b> {{rh}}<br>                <b>Dirección: </b> {{direccion}}<br>                <b>Barrio: </b>{{barrio}}              </div>                   <div class='mediacard'>               <div class='content_mediacard'>                    <div class='encabezado_card'><b>👨 Datos del padre</b><br>                    </div>                    <hr>                  <b>Nombre: </b> {{nombre_papa}}<br>                  <b>CC: </b> {{cedula_papa}} <br>                  <b>Celular: </b> {{celular_1}}<br>                  <b>Ocupación: </b>{{ocupa_padre}}<br>              </div>      </div>      <div class='mediacard'>             <div class='content_mediacard'>                  <div class='encabezado_card'><b>👩 Datos de la madre</b><br>                  </div>                  <hr>                <b>Nombre: </b> {{nombre_mama}}<br>                <b>CC: </b>{{cedula_mama}}<br>                <b>Celular: </b> {{celular_2}}<br>                <b>Ocupación: </b>{{ocupa_madre}}<br>            </div>      </div>      <div class='mediacard'>              <div class='content_mediacard'>                  <div class='encabezado_card'><b>👨‍👦 Acudiente</b><br>                  </div>                  <hr>                <b>Nombre: </b>{{acudiente}}<br>                <b>CC: </b>{{cedula_acud}}<br>                <b>Celular: </b>{{celular_acud}}<br>                <b>Ocupación: </b>{{ocupa_madre}}<br>                <b>Email: </b>{{email_acud}}<br>                <b>Dirección: </b>{{parenteso}}<br>             </div>      </div>      <div class='footer_mediacard'>              <b>Comentario: </b>              <a href='https://wa.me/573017495229?text= Quiero que actualicen los datos de _{{nombre_1}} {{apellido_1}}_ del grado {{grado}}'>                  <i class='fa fa-whatsapp' style='font-size: 150%; padding-left: 10px;'></i></a>      </div>             </div></div>";
-
-// 2. MÓDULO SEGUIMIENTO DEL ESTUIDANTE: alexredondo@academia.net.co => seguimientoDbAcademia
-
-document.getElementById("seguimiento_estudiantes").innerHTML = "<div id='observador'class='marco_prueba' data-sheetdb-url='https://sheetdb.io/api/v1/k0yotk2ghv74z'                      data-sheetdb-sheet='parvulo'      data-sheetdb-search='pinAcceso="+student_pin+"'"+" data-sheetdb-sort-by='fechaSort'         data-sheetdb-sort-order='asc' >  <div class='mediacard'>            <div class='img_mediacard'>                  <img src='https://4.bp.blogspot.com/-c2R8ISSDx7E/XmNBM0R16rI/AAAAAAAAu9Q/UKdfZH-uM9MdFJGr9_vP-5pu2g-ClG7IACKgBGAsYHg/s1600/VID_20200219_202346.mp4' alt='Placeholder'>            </div>            <h2 class='title_mediacard'>📅 {{fecha}}</h2>            <div class='content_mediacard'>                <div class='encabezado_card'><b>{{tipo_reg}}</b>                </div>📑 {{registro}}            </div>            <div class='footer_mediacard'><b>Comentario: </b>              <a href='https://wa.me/573017495229?text= Academia por favor aclarar este registro: _{{registro}}_ '><!-- Fin Comentario a whatsapp -->                  <i class='fa fa-whatsapp' style='font-size: 150%; padding-left: 10px;'></i></a>            </div>  </div></div>";
-
-
-// 3. MÓDULO REGISTRO DE PAGOS
-
-document.getElementById("registro_pagos").innerHTML = "<div class='registro_pagos'>    <table class='tablaRecaudo' >        <caption> <h2>Estado de Cuenta</h2></caption>        <thead>            <tr>              <th>Fecha</th>              <th>Referencia</th>              <th>Valor</th>              <th>No. Recibo</th>              <th>Saldo Acumulado</th>              <th>Intereses</th>            </tr>       </thead>        <tbody data-sheetdb-url='https://sheetdb.io/api/v1/hzy1zwi43cc64' data-sheetdb-sheet='recaudoSaldos' data-sheetdb-search='pinAcceso="+student_pin+"'"+">            <tr>              <td>{{fecha}}</td>              <td>{{D3}}</td>              <td>{{valor}}</td>              <td>{{cod_recibo}}</td>              <td>{{saldo}}</td>              <td>{{intereses}}</td>  <td>{{estado}}</td>          </tr>        </tbody>    </table></div>";
- // 4.
-
-
-}
-
-
-    else 
-
-    {alert('Por favor intente nuevamente')
-}
-
-
-</script>
-
-<!-- END SCRIPT GENERADORES DE CONTENEDORES -->
-<!-- ///////////////////////////////// END CONTENT ///////////////////////////-->
-
-
-
-
-
-
-<!-- ///////////////////////////////// STAR LE ///////////////////////////////// -->
-
-<!-- ///////////////////////////////// START GENIALLY ///////////////////////////////// 
-
-<div id="learning_experiences"class="marco_prueba">
-  <div class="mediacard">
-            <h2 class="title_mediacard">📚 Experiencia de Aprendizaje</h2>
-            <div class="content_mediacard">
-                <div class="encabezado_card"><b>Asignatura: </b>Matemáticas
-                </div>
-                <b>📅 Fecha Presentación:</b>29-10-2020 <br/>
-                <div style="width: 100%;"><div style="position: relative; padding-bottom: 56.25%; padding-top: 0; height: 0;"><iframe frameborder="0" width="1200px" height="675px" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://view.genial.ly/5e5faaa0e857da50baf5f6fd" type="text/html" allowscriptaccess="always" allowfullscreen="true" scrolling="yes" allownetworking="all"></iframe> </div> </div>
-            </div>
-            Comentario a whatsapp 
-            <div class="footer_mediacard"><b>Comentario: </b>
-              <a href="https://wa.me/573017495229?text=Quiero información sobre la experiencia de aprendizaje de Matemáticas de la semana de la fecha...">
-                  <i class="fa fa-whatsapp" style="font-size: 150%; padding-left: 10px;"></i></a>
-            </div>
-            Fin Comentario a whatsapp 
+    <v-alert type="error">
+      I'm an error alert.
+    </v-alert>
   </div>
-</div>
- ///////////////////////////////// END GENIALLY ///////////////////////////////// -->
+</template>
+   
+  </div>
 
-
-<!-- ///////////////////////////////// END LE ///////////////////////////////// -->
-
-<!-- ///////////////////////////////// START ALBUM ///////////////////////////////// 
-
-
-
- <div id="album_fotos" class="mediacard">
-            <h2 class="title_mediacard">📚 Historia en fotos</h2>
-            <div class="content_mediacard">
-                <div class="encabezado_card"><span style="font-size: 80%">Observe cómo a crecido su hij@...</span>
-                </div>
-                <a href="https://4.bp.blogspot.com/-c2R8ISSDx7E/XmNBM0R16rI/AAAAAAAAu9Q/UKdfZH-uM9MdFJGr9_vP-5pu2g-ClG7IACKgBGAsYHg/s1600/VID_20200219_202346.mp4" imageanchor="1" ><img border="0" src="https://4.bp.blogspot.com/-c2R8ISSDx7E/XmNBM0R16rI/AAAAAAAAu9Q/UKdfZH-uM9MdFJGr9_vP-5pu2g-ClG7IACKgBGAsYHg/s320/VID_20200219_202346.mp4" width="320" height="180" data-original-width="1600" data-original-height="900" /></a><a href="https://3.bp.blogspot.com/-wmzJQqtH9zM/XmNBM1zFgsI/AAAAAAAAu9Q/FZRcf-dRSYkx8WJuwXitQXTL6I24yIGhgCKgBGAsYHg/s1600/20190426_135936.jpg" imageanchor="1" ><img border="0" src="https://3.bp.blogspot.com/-wmzJQqtH9zM/XmNBM1zFgsI/AAAAAAAAu9Q/FZRcf-dRSYkx8WJuwXitQXTL6I24yIGhgCKgBGAsYHg/s320/20190426_135936.jpg" width="320" height="240" data-original-width="1600" data-original-height="1200" /></a><a href="https://4.bp.blogspot.com/-B4oY6tTACj8/XmNBMyzssgI/AAAAAAAAu9Q/bSYHokAjda81zZ8aoBtsyT_rY_lvf5IpgCKgBGAsYHg/s1600/20180724_180534.jpg" imageanchor="1" ><img border="0" src="https://4.bp.blogspot.com/-B4oY6tTACj8/XmNBMyzssgI/AAAAAAAAu9Q/bSYHokAjda81zZ8aoBtsyT_rY_lvf5IpgCKgBGAsYHg/s320/20180724_180534.jpg" width="320" height="240" data-original-width="1600" data-original-height="1200" /></a>
-                <div class="encabezado_card"><a href="https://photos.app.goo.gl/PRGkVsqzPY41ivAR8"><i class="fa fa-image" style="font-size: 120%;"></i> Vea todas las fotos...</a>
-                </div>                
-            </div>
-
-            <div class="footer_mediacard"><b>Comentario: </b>
-              <a href="https://wa.me/573017495229?text=Por favor *Academia*, quiero información sobre el registro fotográfico">
-                  <i class="fa fa-whatsapp" style="font-size: 150%; padding-left: 10px;"></i></a>
-
-            </div>
-          
-</div>
- ///////////////////////////////// END ALBUM ///////////////////////////////// -->
-
-
-<!-- ///////////////////////////////// START FOOT ///////////////////////////////// -->
-
-
-<style>
-
-div.sty {
-left:0px;
-bottom: 0px;
-position:fixed;
-background-color: white;
-width: 100%;
-padding: 10px;
-
-}
-</style>
-<div class="sty" align="center" onload="myFunction()">
-              <a href="https://wa.me/573017495229?text=Quiero información sobre la aplicación ...????">
-              <i class="fa fa-whatsapp" style="font-size: 200%; padding-left: 10px;"></i></a>
-              <a href="#perfil_estudiante"><i class="fa fa-user" style="font-size: 200%; padding-left: 25px;"></i></a>
-<!--               <a href="#album_fotos"><i class="fa fa-image" style="font-size: 200%; padding-left: 25px;"></i></a> -->
-              <a href="#observador"><i class="fa fa-eye" style="font-size: 200%; padding-left: 25px;"></i></a>
-<!--               <a href="#learning_experiences"><i class="fa fa-edit" style="font-size: 200%; padding-left: 25px;"></i></a> -->
-              <a href="#pagos_costos_educativos"><i class="fa fa-dollar" style="font-size: 200%; padding-left: 25px;"></i></a>
-</div>
-
-<!-- ///////////////////////////////// END FOOT ///////////////////////////////// -->
-
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+    })
+  </script>
 </body>
 </html>
