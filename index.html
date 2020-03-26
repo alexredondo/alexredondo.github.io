@@ -9,31 +9,20 @@
 <body>
   <div id="app">
     <v-app>
-      <v-content>
-        <v-container>Hello world</v-container>
-      </v-content>
-    </v-app>
-   
-    <template>
-  <div>
+    <v-card>
+      <v-card-title>
+        <h1>Login</h1>
+      </v-card-title>
+      <v-card-text>
+        <v-form>
+          <v-text-field label="Username" />
+        </v-form>
+      </v-card-text>
+    </v-card>
     <v-alert type="success">
       I'm a success alert.
     </v-alert>
-
-    <v-alert type="info">
-      I'm an info alert.
-    </v-alert>
-
-    <v-alert type="warning">
-      I'm a warning alert.
-    </v-alert>
-
-    <v-alert type="error">
-      I'm an error alert.
-    </v-alert>
-  </div>
-</template>
-   
+    </v-app>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
