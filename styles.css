@@ -1,0 +1,64 @@
+/*Escala de color primary*/
+/*Medium : #80bdff
+Light : #d9ebff*/
+
+/* animaciÃ³n */
+
+
+.puffOut {
+	animation: puffOut 2s 10;
+	animation-fill-mode: both;
+	animation-delay: 10s;
+ }
+
+@keyframes puffOut {
+  0% {
+    opacity: 1;
+            transform-origin: 10% 10%;
+            transform: scale(1, 1);
+		}
+  50% {
+    opacity: 1;
+            transform-origin: 10% 10%;
+            transform: scale(1.1, 1.1);
+        }
+
+  100% {
+    opacity: 1;
+            transform-origin: 10% 10%;
+            transform: scale(1, 1);
+        } }
+
+
+.containerAcademia {
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+/*Resaltar una card. Ejemplo:Acudiente*/
+.headerComponenteResaltado {
+	background-color: #80bdff;
+}
+
+.bodyComponenteResaltado {
+	background-color:#d9ebff;
+}
+
+.listComponenteResaltado {
+	background-color:#d9ebff;
+}
+
+.iconoNavBar {
+	font-size: 1.5em;
+}
+
+.navbar_aApp {
+	background-color: #e3f2fd;
+	border-top: solid 1px #EBE9E9;
+	border-bottom: solid 1px #EBE9E9;
+}
+
+h2, h3 {
+      padding-top: 80px;
+      font-family:  -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+      box-shadow: -5px 0px 0px 0px blue;
+  }
