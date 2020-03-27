@@ -5,20 +5,45 @@
 <!-- Required meta tags -->
 	    <meta charset="utf-8">
 	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-<!-- LINK BOOTSTRAP -->
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<!-- END LINK BOOTSTRAP -->
+
+<!-- START LINK BOOSTRAP -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<!-- END LINK BOOSTRAP -->
+
+<link rel="stylesheet" type="text/css" href="styles.css">
+
+<!-- START SCRIPT SHEETDB.IO -->
+<script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.0.6.js"></script>
+<!-- END SCRIPT SHEETDB.IO -->
+
+<!-- START FONTAWESOME -->
+<script src="https://kit.fontawesome.com/4c4c8bc434.js" crossorigin="anonymous"></script>
+<!-- END FONTAWESOME -->
 
 	</head>
-	<body>
+<body>
 
-<div class="container">
-	<nav class="navbar navbar-light bg-light">
-  		<span class="navbar-brand mb-0 h1">AcademiaApp</span>
+
+<!-- START NAV TOP -->
+	<nav class="navbar fixed-top navbar_aApp">
+	  <a class="navbar-brand" href="#perfilEstudiante">
+	  	<span class="iconoNavBar">👤</span>
+	    <!--<img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">-->
+	  </a>
 	</nav>
+<!-- END NAV TOP -->
+<div class="container containerAcademia">
+
+
+<!-- START NAV BAR -->
+
+<!-- END NAV BAR -->
+
 <!-- START CONTENEDORES DE MÓDULOS -->
 <!-- 1. CONTENEDOR DE DATOS PERSONALES -->
-	<div id="datos_personales" class="contenedor_modulos"></div> 
+	<div id="datos_personales">
+		
+	</div> 
 
 <!-- CONTENEDOR SEGUIMIENTO ESTUDIANTES -->
 	<div id="seguimiento_estudiantes" class="contenedor_modulos"></div> 
@@ -28,9 +53,21 @@
 
 <!-- FIN DE CONTENEDORES DE MÓDULOS -->
 
-</div> <!-- END "container"-->
 
-<!-- START SCRIPT -->
+<!-- START NAV BOTTOM -->
+
+	<nav class="navbar navbar-light fixed-bottom navbar_aApp">
+	    <a class="nav-link" href="#"><span class="iconoNavBar">🏫<span></a>
+	    <a class="nav-link puffOut" href="#"><span class="iconoNavBar ">📑<span></a>
+	    <a class="nav-link" href="#"><span class="iconoNavBar">💵<span></a>
+	</nav>
+<!-- END NAV BOTTOM -->
+
+</div> <!-- END div class="container"-->
+
+
+<!-- ////////////////////// START SCRIPT //////////////////////-->
+
 
 <!-- SCRIPT GENERADORES DE CONTENEDORES -->
 	<Script languaje="javascript"> 
@@ -39,18 +76,101 @@
      	{
 
 
-// 1. MÓDULO DE DATOS PERSONALES: SPREEDSHHET: alexredondo@academia.net.co => estudianteDbAcademia 
-   		document.getElementById("datos_personales").innerHTML = "<div id='perfil_estudiante' class='marco_prueba' data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso="+student_pin+"'"+">                                                                                                                  <div class='mediacard'><div class='img_mediacard'> <img src='https://4.bp.blogspot.com/-c2R8ISSDx7E/XmNBM0R16rI/AAAAAAAAu9Q/UKdfZH-uM9MdFJGr9_vP-5pu2g-ClG7IACKgBGAsYHg/s1600/VID_20200219_202346.mp4' alt='Placeholder'>                                                                   </div>            <h2 class='title_mediacard'>👨‍🎓 Datos del Estudiante</h2>             <div class='content_mediacard'>                  <div class='encabezado_card'><b>Estudiante:</b><br> {{nombre_1}} {{nombre_2}}<br> {{apellido_1}} {{apellido_2}}<br><b>Grado:</b> {{grado}} | <b>Grupo:</b> {{grupo}}                  </div>                         <hr>                <b>Tipo de Documento: </b> {{tipo_doc}}<br>                <b>NUIP: </b> {{nuip}} <br>                <b>Fecha Nac: </b> {{fecha_nac}}<br>                <b>Edad: </b>{{edad}}<br>                <b>Sexo: </b> {{sexo}}<br>                <b>RH: </b> {{rh}}<br>                <b>Dirección: </b> {{direccion}}<br>                <b>Barrio: </b>{{barrio}}              </div>                   <div class='mediacard'>               <div class='content_mediacard'>                    <div class='encabezado_card'><b>👨 Datos del padre</b><br>                    </div>                    <hr>                  <b>Nombre: </b> {{nombre_papa}}<br>                  <b>CC: </b> {{cedula_papa}} <br>                  <b>Celular: </b> {{celular_1}}<br>                  <b>Ocupación: </b>{{ocupa_padre}}<br>              </div>      </div>      <div class='mediacard'>             <div class='content_mediacard'>                  <div class='encabezado_card'><b>👩 Datos de la madre</b><br>                  </div>                  <hr>                <b>Nombre: </b> {{nombre_mama}}<br>                <b>CC: </b>{{cedula_mama}}<br>                <b>Celular: </b> {{celular_2}}<br>                <b>Ocupación: </b>{{ocupa_madre}}<br>            </div>      </div>      <div class='mediacard'>              <div class='content_mediacard'>                  <div class='encabezado_card'><b>👨‍👦 Acudiente</b><br>                  </div>                  <hr>                <b>Nombre: </b>{{acudiente}}<br>                <b>CC: </b>{{cedula_acud}}<br>                <b>Celular: </b>{{celular_acud}}<br>                <b>Ocupación: </b>{{ocupa_madre}}<br>                <b>Email: </b>{{email_acud}}<br>                <b>Dirección: </b>{{parenteso}}<br>             </div>      </div>      <div class='footer_mediacard'>              <b>Comentario: </b>              <a href='https://wa.me/573017495229?text= Quiero que actualicen los datos de _{{nombre_1}} {{apellido_1}}_ del grado {{grado}}'>                  <i class='fa fa-whatsapp' style='font-size: 150%; padding-left: 10px;'></i></a>      </div>             </div></div>";
+
+ 		
+// 2. MÓDULO DE DATOS PERSONALES: SPREEDSHHET: alexredondo@academia.net.co => estudianteDbAcademia 
+   		document.getElementById("datos_personales").innerHTML = `
+
+		<h2 id="perfilEstudiante" class="mt-2 mb-2 ml-2 mr-2">Perfil del Estudiante</h2>
+	 		
+ 		<div class="card mt-2 mb-2 ml-2 mr-2" data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso=${student_pin}'>
+		
+		  	<h5 class="card-header">🎓 {{nombre_comp}}</h5>
+
+		  	<div class="card-body">
+		    	<h5 class="card-title">{{grado}} - {{grupo}}</h5>
+		    		<p class="card-text"><b>Tipo de Documento:</b> {{tipo_doc}} <i class="far fa-id-card"></i> No. {{nuip}}.
+		    		</p>
+		    		<ul class="list-group list-group-flush">
+					  <li class="list-group-item">⭐ <b>Fecha de Nacimiento:</b> {{fecha_nac}}</li>
+					  <li class="list-group-item">🌎 <b>Dirección:</b> {{direccion}} - <b>Barrio:</b> {{barrio}}</li>
+					  <li class="list-group-item"><b>Sexo:</b> {{sexo}}</li>
+					  <li class="list-group-item">🩸 <b>RH:</b> {{rh}}</li>
+					  <li class="list-group-item">📧 <b>Email</b> {{email}}</li>					  
+					</ul>
+		    		<a href="https://wa.me/573017495229?text= Quiero que actualicen los datos de *{{nombre_comp}}* del grado {{grado}}" class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Actualizar</a>
+			</div>
+		</div>
+
+
+ 		<div class="card mt-2 mb-2 ml-2 mr-2" data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso=${student_pin}'>
+
+		  	<h5 class="card-header">👨‍👧 Padre de familia</h5>
+		  
+		  	<div class="card-body">
+		    	<h5 class="card-title">{{nombre_papa}}</h5>
+		    		<p class="card-text"><b>Tipo de Documento:</b> CC <i class="far fa-id-card"></i> No. {{cedula_papa}}.
+		    		</p>
+		    		<ul class="list-group list-group-flush">
+					  <li class="list-group-item"><b>📱 Celular: </b> {{celular_1}}</li>
+					  <li class="list-group-item"><b>Ocupación: </b>{{ocupa_padre}}</li>
+
+					</ul>
+		    		<a href="https://wa.me/573017495229?text= Quiero que actualicen los datos del papá de *{{nombre_comp}}* del grado {{grado}}-{{grupo}}" class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Actualizar</a>
+			</div>
+		</div>
+
+
+ 		<div class="card mt-2 mb-2 ml-2 mr-2" data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso=${student_pin}'>
+
+		  	<h5 class="card-header">👩‍👧 Madre de familia</h5>
+		  
+		  	<div class="card-body">
+		    	<h5 class="card-title">{{nombre_mama}}</h5>
+		    		<p class="card-text"><b>Tipo de Documento:</b> CC <i class="far fa-id-card"></i> No. {{cedula_mama}}.
+		    		</p>
+		    		<ul class="list-group list-group-flush">
+					  <li class="list-group-item"><b>📱 Celular: </b> {{celular_2}}</li>
+					  <li class="list-group-item"><b>Ocupación: </b>{{ocupa_madre}}</li>
+
+					</ul>
+		    		<a href="https://wa.me/573017495229?text= Quiero que actualicen los datos de la mamá de *{{nombre_comp}}* del grado {{grado}}-{{grupo}}" class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Actualizar</a>
+			</div>
+		</div>
+
+
+		<div class="card mt-2 mb-2 ml-2 mr-2" data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso=${student_pin}'>
+
+		  	<h5 class="card-header headerComponenteResaltado">
+		  		📝 Acudiente</h5>
+		  
+		  	<div class="card-body bodyComponenteResaltado">
+		    	<h5 class="card-title">{{acudiente}}</h5>
+		    		<p class="card-text"><b>Tipo de Documento:</b> CC <i class="far fa-id-card"></i> No. {{cedula_acud}}.
+		    		</p>
+		    		<ul class="list-group list-group-flush" >
+		    		  <li class="list-group-item listComponenteResaltado"><b>👩‍👧 Parentesco: </b> {{parenteso}}</li>
+					  <li class="list-group-item listComponenteResaltado"><b>📱 Celular: </b> {{celular_acud}}</li>
+					  <li class="list-group-item listComponenteResaltado">📧 <b>Email</b> {{email_acud}}</li>
+
+					</ul>
+		    		<a href="https://wa.me/573017495229?text= Quiero que actualicen los datos de la mamá de *{{nombre_comp}}* del grado {{grado}}-{{grupo}}" class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Actualizar</a>
+			</div>
+		</div>
+   		`;
+
+
  		}
 	</script>
 <!-- END GENERADORES DE CONTENEDORES -->
 
-<!-- START SCRIPT BOOTSTRAP -->
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<!-- END SCRIPT BOOTSTRAP -->
-<!-- END SCRIPT -->
 
+<!-- START SCRIPT BOOSTRAP-->
+		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!-- END SCRIPT BOOSTRAP-->
+
+<!-- END SCRIPT -->
 	</body>
 </html>
