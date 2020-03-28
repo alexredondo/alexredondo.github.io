@@ -1,89 +1,47 @@
 <html> 
-  <head> </head> 
+  <head> <script src="https://apis.google.com/js/api.js"></script></head> 
   <body> 
-    <!-- <! -- 
-    ANTES DE EJECUTAR: 
-    --------------- 
-    1. Si aún no lo ha hecho, habilite la API de Hojas de cálculo de Google 
-       y verifique cuota para su proyecto en 
-       https://console.developers.google.com/apis/api/sheets 
-    2. Obtenga claves de acceso para su aplicación. Consulte 
-       https://developers.google.com/api-client-library/javascript/start/start-js#get-access-keys-for-your-application 
-    3. Para obtener información adicional sobre la autenticación, consulte 
-       https: // desarrolladores .google.com / sheet / api / quickstart / js # step_2_set_up_the_sample 
-  -->
-    <script> 
-    function makeApiCall () { 
-      var params = {
-        // The ID of the spreadsheet to retrieve data from.
-        spreadsheetId: '1Y-sr-7QMaoOZZnLM_7Sxwfgl0PnkdvNgPcqepMZuK9w',  // TODO: Update placeholder value.
 
-        // The A1 notation of the values to retrieve.
-        range: 'datosEstudiantes',  // TODO: Update placeholder value.
+<script>
+  /**
+   * Sample JavaScript code for sheets.spreadsheets.get
+   * See instructions for running APIs Explorer code samples locally:
+   * https://developers.google.com/explorer-help/guides/code_samples#javascript
+   */
 
-        // How values should be represented in the output.
-        // The default render option is ValueRenderOption.FORMATTED_VALUE.
-        valueRenderOption: 'FORMATTED_VALUE',  // TODO: Update placeholder value.
+  function authenticate() {
+    return gapi.auth2.getAuthInstance()
+        .signIn({scope: "https://www.googleapis.com/auth/drive https://www.googleapis.com/auth/drive.file https://www.googleapis.com/auth/drive.readonly https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/spreadsheets.readonly"})
+        .then(function() { console.log("Sign-in successful"); },
+              function(err) { console.error("Error signing in", err); });
+  }
+  function loadClient() {
+    gapi.client.setApiKey("YOUR_API_KEY");
+    return gapi.client.load("https://content.googleapis.com/discovery/v1/apis/sheets/v4/rest")
+        .then(function() { console.log("GAPI client loaded for API"); },
+              function(err) { console.error("Error loading GAPI client for API", err); });
+  }
+  // Make sure the client is loaded and sign-in is complete before calling this method.
+  function execute() {
+    return gapi.client.sheets.spreadsheets.get({
+      "spreadsheetId": "1Y-sr-7QMaoOZZnLM_7Sxwfgl0PnkdvNgPcqepMZuK9w",
+      "includeGridData": true,
+      "ranges": [
+        "datosEstudiantes"
+      ]
+    })
+        .then(function(response) {
+                // Handle the results here (response.result has the parsed body).
+                console.log("Response", response);
+              },
+              function(err) { console.error("Execute error", err); });
+  }
+  gapi.load("client:auth2", function() {
+    gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
+  });
+</script>
+<button onclick="authenticate().then(loadClient)">authorize and load</button>
+<button onclick="execute()">execute</button>
 
-        // How dates, times, and durations should be represented in the output.
-        // This is ignored if value_render_option is
-        // FORMATTED_VALUE.
-        // The default dateTime render option is [DateTimeRenderOption.SERIAL_NUMBER].
-        dateTimeRenderOption: 'SERIAL_NUMBER'  // TODO: Update placeholder value.
-      };
-
-      var request = gapi.client.sheets.spreadsheets.values.get(params);
-      request.then(function(response) {
-        // TODO: Change code below to process the `response` object:
-        console.log(response.result.values);
-      }, function(reason) {
-        console.error('error: ' + reason.result.error.message);
-      });
-    }
-
-    function initClient() {
-      var API_KEY = 'AIzaSyDpAYPh03HbCnlhBGefw3DLAF10MIf0ruM';  // TODO: Update placeholder with desired API key.
-
-      var CLIENT_ID = '18806597319-43iollcieqio34r6n6pn88f8qaguakkj.apps.googleusercontent.com';  // TODO: Update placeholder with desired client ID.
-
-      // TODO: Authorize using one of the following scopes:
-      // 'https://www.googleapis.com/auth/drive' 
-      // 'https://www.googleapis.com/auth/drive.file' 
-      // 'https://www.googleapis.com/auth /drive.readonly ' 
-      //' https://www.googleapis.com/auth/spreadsheets ' 
-      //' https://www.googleapis.com/auth/spreadsheets.readonly ' 
-      var SCOPE ='https://www.googleapis.com/auth/spreadsheets.readonly'; 
-      gapi.client.init ({ 
-        'apiKey': API_KEY, 
-        'clientId': CLIENT_ID, 
-        'scope': SCOPE, 
-        'discoveryDocs': ['https://sheets.googleapis.com/$discovery/rest?version=v4' ] 
-      }). then (function () { 
-        gapi.auth2.getAuthInstance (). isSignedIn.listen (updateSignInStatus);
-
-        updateSignInStatus (gapi.auth2.getAuthInstance (). isSignedIn.get ()); 
-      }); 
-    } 
-    function handleClientLoad () { 
-      gapi.load ('cliente: auth2', initClient); 
-    } 
-    function updateSignInStatus (isSignedIn) { 
-      if (isSignedIn) { 
-        makeApiCall (); 
-      } 
-    } 
-    function handleSignInClick (event) { 
-      gapi.auth2.getAuthInstance (). signIn (); 
-    } 
-    function handleSignOutClick (evento) { 
-      gapi.auth2.getAuthInstance (). signOut (); 
-    } 
-    </script> 
-    <script async defer src = "https://apis.google.com/js/api.js"
-      onload = "this.onload = function () {}; handleClientLoad ()" 
-      onreadystatechange = "if (this.readyState === 'complete') this.onload ()"> 
-    </script> 
-    <button id = "signin- button "onclick =" handleSignInClick () "> Iniciar sesión </button> 
-    <button id =" signout-button "onclick =" handleSignOutClick () "> Cerrar sesión </button> 
   </body> 
 </html>
