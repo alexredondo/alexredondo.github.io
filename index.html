@@ -1,10 +1,11 @@
 <html> 
-  <head> <script src="https://apis.google.com/js/api.js"></script></head> 
+  <head><script src="https://apis.google.com/js/api.js"></script></head> 
   <body> 
 
+    
 <script>
   /**
-   * Sample JavaScript code for sheets.spreadsheets.get
+   * Sample JavaScript code for sheets.spreadsheets.values.get
    * See instructions for running APIs Explorer code samples locally:
    * https://developers.google.com/explorer-help/guides/code_samples#javascript
    */
@@ -23,12 +24,12 @@
   }
   // Make sure the client is loaded and sign-in is complete before calling this method.
   function execute() {
-    return gapi.client.sheets.spreadsheets.get({
+    return gapi.client.sheets.spreadsheets.values.get({
       "spreadsheetId": "1Y-sr-7QMaoOZZnLM_7Sxwfgl0PnkdvNgPcqepMZuK9w",
-      "includeGridData": true,
-      "ranges": [
-        "datosEstudiantes"
-      ]
+      "range": "datosEstudiantes",
+      "dateTimeRenderOption": "FORMATTED_STRING",
+      "majorDimension": "ROWS",
+      "valueRenderOption": "UNFORMATTED_VALUE"
     })
         .then(function(response) {
                 // Handle the results here (response.result has the parsed body).
@@ -42,6 +43,6 @@
 </script>
 <button onclick="authenticate().then(loadClient)">authorize and load</button>
 <button onclick="execute()">execute</button>
-
+    
   </body> 
 </html>
