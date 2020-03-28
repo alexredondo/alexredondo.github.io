@@ -120,7 +120,6 @@
 document.getElementById("seguimiento_estudiantes").innerHTML = `
 
 <h2 id="seguimientoEstudiante" class="mt-2 mb-4 ml-1 mr-1"><div class="contenedorHN">Seguimiento del Estudiante</div></h2>
-// cambiar variable parvulo
 
 		<div class="card mt-2 mb-2 ml-1 mr-1" data-sheetdb-url='https://sheetdb.io/api/v1/k0yotk2ghv74z' data-sheetdb-sheet='parvulo' data-sheetdb-search='pinAcceso=${student_pin}' data-sheetdb-sort-by='fechaSort' data-sheetdb-sort-order='desc'>
 
@@ -133,270 +132,7 @@ document.getElementById("seguimiento_estudiantes").innerHTML = `
 					<ul class="list-group list-group-flush">
 					<li class="list-group-item lead text-justify" >📑 {{registro}}</li>
 					</ul>
-					<a href="https://wa.me/573017495229?text= Quiero que más información sobre este registro _{{registro}}_ del estudiante *{{nombre_comp}}*  class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Comentar</a>
-					
-			</div>
-		</div>
-		`
-
-// 2. MÓDULO DE RECAUDOS: SPREEDSHHET: alexredondo@academia.net.co => recaudoDbAcademia 
-document.getElementById("registro_pagos").innerHTML = `
-
-<h2 id="registroPagos" class="mt-2 mb-4 ml-1 mr-1"><div class="contenedorHN">Transacciones</div></h2>
-cambiar variable parvulo
-
-		<div class="card mt-2 mb-2 ml-1 mr-1" data-sheetdb-url='https://sheetdb.io/api/v1/hzy1zwi43cc64' data-sheetdb-sheet='recaudoSaldos' data-sheetdb-search='pinAcceso=${student_pin}' data-sheetdb-sort-by='fechaSort' data-sheetdb-sort-order='asc'>
-
-			<h5 class="card-header">{{transaccion}}: {{valor}}</h5>
-
-			<div class="card-body">
-				<h5 class="card-title">📅 Fecha: {{fecha}}</h5>
-					<p class="card-text">Comprobante No. {{cod_recibo}}<br>{{observaciones}}
-					</p>
-					<ul class="list-group list-group-flush">
-					<li class="list-group-item lead text-justify" >{{descripcionSaldo}} {{saldo}} {{estado}}</li>
-					<li class="list-group-item lead text-justify" >Intereses: {{intereses}}</li>
-					</ul>
-					<a href="https://wa.me/573017495229?text= Quiero que más información sobre esta transacción _{{transaccion}}: {{valor}}_ del estudiante *{{estudiante}}*  class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Comentar</a>
-					<a href="https://wa.me/573017495229?text= Quiero que más información sobre esta transacción _{{transaccion}}: {{valor}}_ del estudiante *{{estudiante}}*  class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Pagar por PSE</a>
-					
-			</div>
-		</div>
-		`
- 		
-// 3. MÓDULO DE DATOS PERSONALES: SPREEDSHHET: alexredondo@academia.net.co => estudianteDbAcademia 
-   		document.getElementById("datos_personales").innerHTML = `
-
-		<h2 id="perfilEstudiante" class="mt-2 mb-4 ml-1 mr-1"><div class="contenedorHN">Perfil del Estudiante</div></h2>
-	 		
- 		<div class="card mt-2 mb-2 ml-1 mr-1" data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso=${student_pin}'>
-		
-		  	<h5 class="card-header">🎓 {{nombre_comp}}</h5>
-
-		  	<div class="card-body">
-		    	<h5 class="card-title">{{grado}} - {{grupo}}</h5>
-		    		<p class="card-text"><b><i class="far fa-id-card"></i> Tipo de Documento:</b> {{tipo_doc}} No. {{nuip}}.
-		    		</p>
-		    		<ul class="list-group list-group-flush">
-					  <li class="list-group-item">⭐ <b>Fecha de Nacimiento:</b> {{fecha_nac}}</li>
-					  <li class="list-group-item">🌎 <b>Dirección:</b> {{direccion}} - <b>Barrio:</b> {{barrio}}</li>
-					  <li class="list-group-item"><b>Sexo:</b> {{sexo}}</li>
-					  <li class="list-group-item">🩸 <b>RH:</b> {{rh}}</li>
-					  <li class="list-group-item">📧 <b>Email</b> {{email}}</li>					  
-					</ul>
-		    		<a href="https://wa.me/573017495229?text= Quiero que actualicen los datos de *{{nombre_comp}}* del grado {{grado}}" class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Actualizar</a>
-			</div>
-		</div>
-
-
- 		<div class="card mt-2 mb-2 ml-1 mr-1" data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso=${student_pin}'>
-
-		  	<h5 class="card-header">👨‍👧 Padre de familia</h5>
-		  
-		  	<div class="card-body">
-		    	<h5 class="card-title">{{nombre_papa}}</h5>
-		    		<p class="card-text"><b><i class="far fa-id-card"></i> Tipo de Documento:</b> CC No. {{cedula_papa}}.
-		    		</p>
-		    		<ul class="list-group list-group-flush">
-					  <li class="list-group-item"><b>📱 Celular: </b> {{celular_1}}</li>
-					  <li class="list-group-item"><b>Ocupación: </b>{{ocupa_padre}}</li>
-
-					</ul>
-		    		<a href="https://wa.me/573017495229?text= Quiero que actualicen los datos del PAPÁ de *{{nombre_comp}}* del grado {{grado}}-{{grupo}}" class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Actualizar</a>
-			</div>
-		</div>
-
-
- 		<div class="card mt-2 mb-2 ml-1 mr-1" data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso=${student_pin}'>
-
-		  	<h5 class="card-header">👩‍👧 Madre de familia</h5>
-		  
-		  	<div class="card-body">
-		    	<h5 class="card-title">{{nombre_mama}}</h5>
-		    		<p class="card-text"><b><i class="far fa-id-card"></i> Tipo de Documento:</b> CC No. {{cedula_mama}}.
-		    		</p>
-		    		<ul class="list-group list-group-flush">
-					  <li class="list-group-item"><b>📱 Celular: </b> {{celular_2}}</li>
-					  <li class="list-group-item"><b>Ocupación: </b>{{ocupa_madre}}</li>
-
-					</ul>
-		    		<a href="https://wa.me/573017495229?text= Quiero que actualicen los datos de la MAMÁ de *{{nombre_comp}}* del grado {{grado}}-{{grupo}}" class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Actualizar</a>
-			</div>
-		</div>
-
-
-		<div class="card mt-2 mb-2 ml-1 mr-1" data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso=${student_pin}'>
-
-		  	<h5 class="card-header headerComponenteResaltado">
-		  		📝 Acudiente</h5>
-		  
-		  	<div class="card-body bodyComponenteResaltado">
-		    	<h5 class="card-title">{{acudiente}}</h5>
-		    		<p class="card-text"><b><i class="far fa-id-card"></i> Tipo de Documento:</b> CC No. {{cedula_acud}}.
-		    		</p>
-		    		<ul class="list-group list-group-flush" >
-		    		  <li class="list-group-item listComponenteResaltado"><b>👩‍👧 Parentesco: </b> {{parenteso}}</li>
-					  <li class="list-group-item listComponenteResaltado"><b>📱 Celular: </b> {{celular_acud}}</li>
-					  <li class="list-group-item listComponenteResaltado">📧 <b>Email</b> {{email_acud}}</li>
-
-					</ul>
-		    		<a href="https://wa.me/573017495229?text= Quiero que actualicen los datos del ACUDIENTE de *{{nombre_comp}}* del grado {{grado}}-{{grupo}}" class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Actualizar</a>
-			</div>
-		</div>
-   		`;
-
-
- 		}
-	</script>
-<!-- END GENERADORES DE CONTENEDORES -->
-
-
-<!-- START SCRIPT BOOSTRAP-->
-		<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-<!-- END SCRIPT BOOSTRAP-->
-
-<!-- END SCRIPT -->
-	</body>
-</html>
-
-
-<!DOCTYPE html>
-<html lang="es">
-	<head>
-
-<!-- Required meta tags -->
-	    <meta charset="utf-8">
-	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
-
-<!-- START LINK BOOSTRAP -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<!-- END LINK BOOSTRAP -->
-
-<link rel="stylesheet" type="text/css" href="styles.css">
-
-<!-- START SCRIPT SHEETDB.IO -->
-<script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.0.6.js"></script>
-<!-- END SCRIPT SHEETDB.IO -->
-
-<!-- START FONTAWESOME -->
-<script src="https://kit.fontawesome.com/4c4c8bc434.js" crossorigin="anonymous"></script>
-<!-- END FONTAWESOME -->
-
-	</head>
-<body>
-
-
-<!-- START NAV TOP -->
-	<nav class="navbar fixed-top navbar_aApp">
-	  <a class="navbar-brand" href="#perfilEstudiante">
-		<span class="iconoNavBar"></span>
-	  <img src="https://lh3.googleusercontent.com/-5VBdGyCRAfo/WkZ_wdRsCoI/AAAAAAAAisQ/gISWI7wpTRcEA0eZp3D91nfOStIOMeoywCEwYBhgL/w800/LOGO.png" width="90" height="45" alt="Academia">	  <span class="badge badge-primary">1</span></a>
-	</nav>
-<!-- END NAV TOP -->
-
-<div class="container containerAcademia">
-
-<!-- START NAV BAR -->
-
-<!-- END NAV BAR -->
-
-<!-- START CONTENEDORES DE MÓDULOS -->
-<!-- 1. CONTENEDOR SEGUIMIENTO ESTUDIANTES -->
-<div id="seguimiento_estudiantes">
-
-</div> 
-
-<!-- 2. CONTENEDOR DEL REGISTRO DE PAGOS -->
-<div id="registro_pagos" class="contenedor_modulos">
-
-</div> 
-
-<!-- 3. CONTENEDOR DE DATOS PERSONALES -->
-	<div id="datos_personales">
-		
-	</div> 
-
-
-
-
-<!-- FIN DE CONTENEDORES DE MÓDULOS -->
-
-
-
-<!-- START NAV BOTTOM -->
-
-	<nav id="navBootom" class="navbar navbar-light fixed-bottom navbar_aApp">
-		<a class="navbar-brand" href="#perfilEstudiante"><span class="iconoNavBar borderIcono">👤</span></a>
-	    <a class="navbar-brand puffOut" href="#seguimientoEstudiante"><span class="iconoNavBar borderIcono ">📑<span></a>
-		<a class="navbar-brand" href="#registro_pagos"><span class="iconoNavBar borderIcono">💵<span></a>
-		<a class="navbar-brand" href="Tel:573017495229"><span class="iconoNavBar borderIcono">📞<span></a>
-	</nav>
-<!-- END NAV BOTTOM -->
-
-</div> <!-- END div class="container"-->
-
-<!-- START FOOT WEB -->
-<div id="navJumbotron" class="jumbotron jumbotron-fluid">
-	<div class="container">
-	  <h1 class="display-4">Te escuchamos...</h1>
-	  <p class="lead">Estamos disponibles para atender sus solicitudes. No dude en usar cualquiera de los canales para tener el gusto de atenderlo.</p>
-
-	  <addres class="lead">
-		Director <a href="mailto:alexredondo@academia.net.co">Esp. Alexander Redondo F.</a><br>
-		Carrera 28 No. 10-45 Barrio Puerta Roja<br>
-		Sincelejo, Sucre, Colombia (CO)<br>
-		Código Postal 70001<br>
-		</address>
-			<a href="Tel:5752743450" ></a>☎ 
-				 Tel&eacute;fono : (+57) 52720074
-		</a><br> 
-			
-		<ul class="list-group list-group-horizontal listUlCell">
-			<li class="list-group-item listCell"><a href="Tel:573017495229" >📱</a></li>
-			<li class="list-group-item listCell"><a href="Tel:573017495229" >Celular : (+57) 301 7495229</a></li>
-			<li class="list-group-item listCell"><a href="Tel:573002835959" >Celular : (+57) 300 2835959</a></li>
-			<li class="list-group-item listCell"><a href="Tel:573022999720" >Celular : (+57) 302 2999720</a></li>
-		  </ul>
-
-			
-			
-		</div>
-
-
-	</div>
-  </div>
-<!-- END FOOT WEB -->
-
-
-<!-- ////////////////////// START SCRIPT //////////////////////-->
-
-
-<!-- SCRIPT GENERADORES DE CONTENEDORES -->
-	<Script languaje="javascript"> 
-  		var student_pin = "22r3l3"; //prompt("🔑 Por favor ingrese su PIN de estudiante. Si se le olvido o no lo tiene comunicarse con la teacher.💬"); // Ingreso del PIN
-    	if (student_pin != null) 
-     	{
-
-
-// 1. MÓDULO DE SEGUIMIENTO AL ESTUDIANTE: SPREEDSHHET: alexredondo@academia.net.co => seguimientoDbAcademia 
-document.getElementById("seguimiento_estudiantes").innerHTML = `
-
-<h2 id="seguimientoEstudiante" class="mt-2 mb-4 ml-1 mr-1"><div class="contenedorHN">Seguimiento del Estudiante</div></h2>
-
-		<div class="card mt-2 mb-2 ml-1 mr-1" data-sheetdb-url='https://sheetdb.io/api/v1/k0yotk2ghv74z' data-sheetdb-sheet='parvulo' data-sheetdb-search='pinAcceso=${student_pin}' data-sheetdb-sort-by='fechaSort' data-sheetdb-sort-order='desc'>
-
-			<h5 class="card-header">{{tipo_reg}}</h5>
-			<!--<img src="{{foto}}" class="card-img-top" alt="foto del estudiante">-->
-			<div class="card-body">
-				<h5 class="card-title">{{fecha}}</h5>
-					<p class="card-text">{{docente}}
-					</p>
-					<ul class="list-group list-group-flush">
-					<li class="list-group-item lead text-justify" >📑 {{registro}}</li>
-					</ul>
-					<a href="https://wa.me/573017495229?text= Quiero que más información sobre este registro _{{registro}}_ del estudiante *{{nombre_comp}}*  class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Comentar</a>
+					<a class="badge badge-info" href="https://wa.me/573017495229?text= Quiero que más información sobre este registro _{{registro}}_ del estudiante *{{nombre_comp}}*  class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Comentar</a>
 					
 			</div>
 		</div>
@@ -409,15 +145,15 @@ document.getElementById("registro_pagos").innerHTML = `
 
 		<div class="card mt-2 mb-2 ml-1 mr-1" data-sheetdb-url='https://sheetdb.io/api/v1/hzy1zwi43cc64' data-sheetdb-sheet='recaudoSaldos' data-sheetdb-search='pinAcceso=${student_pin}' data-sheetdb-sort-by='fechaSort' data-sheetdb-sort-order='asc'>
 
-			<h5 class="card-header"><span style="font-weight: 470;">{{transaccion}}:</span> <span style="font-size: 1.2em;">{{valor}}</span></h5>
+			<h5 class="card-header"><span style="font-weight: 450;">{{transaccion}}:</span> <span style="font-size: 1.2em;">{{valor}}</span></h5>
 
 			<div class="card-body">
 				<h5 class="card-title">📅 Fecha: <span style="font-weight: 400;">{{fecha}}</span></h5>
 					<p class="card-text">Comprobante No. {{cod_recibo}}<br>{{observaciones}}
 					</p>
 					<ul class="list-group list-group-flush">
-					<li class="list-group-item lead text-justify" >{{estado}} {{descripcionSaldo}} {{saldo}}</li>
-					<li class="list-group-item lead text-justify" ><b>Intereses:</b> {{intereses}} <br> {{diasMora}}</li>
+					<li class="list-group-item lead" >{{estado}} {{descripcionSaldo}} {{saldo}}</li>
+					<li class="list-group-item lead" ><b>Intereses:</b> {{intereses}} <br> {{diasMora}}</li>
 					</ul>
 					<a class="badge badge-info" href="https://wa.me/573017495229?text= Quiero que más información sobre esta transacción _{{transaccion}}: {{valor}}_ del estudiante *{{estudiante}}*  class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Comentar</a>
 					<a class="badge badge-success" href="https://wa.me/573017495229?text= Quiero que más información sobre esta transacción _{{transaccion}}: {{valor}}_ del estudiante *{{estudiante}}*  class="btn btn-primary mt-4" ><i class="fab fa-whatsapp"> </i> Pagar por PSE</a>
