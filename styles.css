@@ -60,5 +60,12 @@ Light : #d9ebff*/
 h2, h3 {
       padding-top: 80px;
       font-family:  -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-      box-shadow: -5px 0px 0px 0px blue;
+
   }
+
+.contenedorHN {
+  border: solid 1px #80bdff;
+  box-shadow: -5px 0px 0px 0px lightskyblue;
+  border-radius: 5px;
+  padding: 10px;
+}
