@@ -32,24 +32,31 @@
 	  </a>
 	</nav>
 <!-- END NAV TOP -->
-<div class="container containerAcademia">
 
+<div class="container containerAcademia">
 
 <!-- START NAV BAR -->
 
 <!-- END NAV BAR -->
 
 <!-- START CONTENEDORES DE MÓDULOS -->
-<!-- 1. CONTENEDOR DE DATOS PERSONALES -->
+<!-- 1. CONTENEDOR SEGUIMIENTO ESTUDIANTES -->
+<div id="seguimiento_estudiantes">
+
+</div> 
+
+<!-- 2. CONTENEDOR DEL REGISTRO DE PAGOS -->
+<div id="registro_pagos" class="contenedor_modulos">
+
+</div> 
+
+<!-- 3. CONTENEDOR DE DATOS PERSONALES -->
 	<div id="datos_personales">
 		
 	</div> 
 
-<!-- CONTENEDOR SEGUIMIENTO ESTUDIANTES -->
-	<div id="seguimiento_estudiantes" class="contenedor_modulos"></div> 
 
-<!-- CONTENEDOR DEL REGISTRO DE PAGOS -->
-	<div id="registro_pagos" class="contenedor_modulos"></div> 
+
 
 <!-- FIN DE CONTENEDORES DE MÓDULOS -->
 
@@ -57,9 +64,9 @@
 <!-- START NAV BOTTOM -->
 
 	<nav class="navbar navbar-light fixed-bottom navbar_aApp">
-	    <a class="nav-link" href="#"><span class="iconoNavBar">🏫<span></a>
-	    <a class="nav-link puffOut" href="#"><span class="iconoNavBar ">📑<span></a>
-	    <a class="nav-link" href="#"><span class="iconoNavBar">💵<span></a>
+	    <a class="nav-link" href="https://www.academia.net.co/"><span class="iconoNavBar">🏫<span></a>
+	    <a class="nav-link puffOut" href="#seguimientoEstudiante"><span class="iconoNavBar ">📑<span></a>
+	    <a class="nav-link" href="#registro_pagos"><span class="iconoNavBar">💵<span></a>
 	</nav>
 <!-- END NAV BOTTOM -->
 
@@ -71,19 +78,64 @@
 
 <!-- SCRIPT GENERADORES DE CONTENEDORES -->
 	<Script languaje="javascript"> 
-  		var student_pin = prompt("🔑 Por favor ingrese su PIN de estudiante. Si se le olvido o no lo tiene comunicarse con la teacher.💬"); // Ingreso del PIN
+  		var student_pin = "22r3l3"; //prompt("🔑 Por favor ingrese su PIN de estudiante. Si se le olvido o no lo tiene comunicarse con la teacher.💬"); // Ingreso del PIN
     	if (student_pin != null) 
      	{
 
 
+// 1. MÓDULO DE SEGUIMIENTO AL ESTUDIANTE: SPREEDSHHET: alexredondo@academia.net.co => seguimientoDbAcademia 
+document.getElementById("seguimiento_estudiantes").innerHTML = `
 
+<h2 id="seguimientoEstudiante" class="mt-2 mb-4 ml-1 mr-1"><div class="contenedorHN">Seguimiento del Estudiante</div></h2>
+// cambiar variable parvulo
+
+		<div class="card mt-2 mb-2 ml-1 mr-1" data-sheetdb-url='https://sheetdb.io/api/v1/k0yotk2ghv74z' data-sheetdb-sheet='parvulo' data-sheetdb-search='pinAcceso=${student_pin}' data-sheetdb-sort-by='fechaSort' data-sheetdb-sort-order='desc'>
+
+			<h5 class="card-header">{{tipo_reg}}</h5>
+			<img src="{{foto}}" class="card-img-top" alt="foto del estudiante">
+			<div class="card-body">
+				<h5 class="card-title">{{fecha}}</h5>
+					<p class="card-text">{{docente}}
+					</p>
+					<ul class="list-group list-group-flush">
+					<li class="list-group-item lead text-justify" >📑 {{registro}}</li>
+					</ul>
+					<a href="https://wa.me/573017495229?text= Quiero que más información sobre este registro _{{registro}}_ del estudiante *{{nombre_comp}}*  class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Comentar</a>
+					
+			</div>
+		</div>
+		`
+
+// 2. MÓDULO DE RECAUDOS: SPREEDSHHET: alexredondo@academia.net.co => recaudoDbAcademia 
+document.getElementById("registro_pagos").innerHTML = `
+
+<h2 id="registroPagos" class="mt-2 mb-4 ml-1 mr-1"><div class="contenedorHN">Transacciones</div></h2>
+cambiar variable parvulo
+
+		<div class="card mt-2 mb-2 ml-1 mr-1" data-sheetdb-url='https://sheetdb.io/api/v1/hzy1zwi43cc64' data-sheetdb-sheet='recaudoSaldos' data-sheetdb-search='pinAcceso=${student_pin}' data-sheetdb-sort-by='fechaSort' data-sheetdb-sort-order='asc'>
+
+			<h5 class="card-header">{{transaccion}}: {{valor}}</h5>
+
+			<div class="card-body">
+				<h5 class="card-title">Fecha: {{fecha}}</h5>
+					<p class="card-text">Recibo de pago No. {{cod_recibo}}<br>{{observaciones}}
+					</p>
+					<ul class="list-group list-group-flush">
+					<li class="list-group-item lead text-justify" >{{saldo}} {{estado}}</li>
+					<li class="list-group-item lead text-justify" >Intereses: {{intereses}}</li>
+					</ul>
+					<a href="https://wa.me/573017495229?text= Quiero que más información sobre esta transacción _{{registro}}_ del estudiante *{{nombre_comp}}*  class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Comentar</a>
+					
+			</div>
+		</div>
+		`
  		
-// 2. MÓDULO DE DATOS PERSONALES: SPREEDSHHET: alexredondo@academia.net.co => estudianteDbAcademia 
+// 3. MÓDULO DE DATOS PERSONALES: SPREEDSHHET: alexredondo@academia.net.co => estudianteDbAcademia 
    		document.getElementById("datos_personales").innerHTML = `
 
-		<h2 id="perfilEstudiante" class="mt-2 mb-2 ml-2 mr-2">Perfil del Estudiante</h2>
+		<h2 id="perfilEstudiante" class="mt-2 mb-4 ml-1 mr-1"><div class="contenedorHN">Perfil del Estudiante</div></h2>
 	 		
- 		<div class="card mt-2 mb-2 ml-2 mr-2" data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso=${student_pin}'>
+ 		<div class="card mt-2 mb-2 ml-1 mr-1" data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso=${student_pin}'>
 		
 		  	<h5 class="card-header">🎓 {{nombre_comp}}</h5>
 
@@ -103,7 +155,7 @@
 		</div>
 
 
- 		<div class="card mt-2 mb-2 ml-2 mr-2" data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso=${student_pin}'>
+ 		<div class="card mt-2 mb-2 ml-1 mr-1" data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso=${student_pin}'>
 
 		  	<h5 class="card-header">👨‍👧 Padre de familia</h5>
 		  
@@ -116,12 +168,12 @@
 					  <li class="list-group-item"><b>Ocupación: </b>{{ocupa_padre}}</li>
 
 					</ul>
-		    		<a href="https://wa.me/573017495229?text= Quiero que actualicen los datos del papá de *{{nombre_comp}}* del grado {{grado}}-{{grupo}}" class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Actualizar</a>
+		    		<a href="https://wa.me/573017495229?text= Quiero que actualicen los datos del PAPÁ de *{{nombre_comp}}* del grado {{grado}}-{{grupo}}" class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Actualizar</a>
 			</div>
 		</div>
 
 
- 		<div class="card mt-2 mb-2 ml-2 mr-2" data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso=${student_pin}'>
+ 		<div class="card mt-2 mb-2 ml-1 mr-1" data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso=${student_pin}'>
 
 		  	<h5 class="card-header">👩‍👧 Madre de familia</h5>
 		  
@@ -134,12 +186,12 @@
 					  <li class="list-group-item"><b>Ocupación: </b>{{ocupa_madre}}</li>
 
 					</ul>
-		    		<a href="https://wa.me/573017495229?text= Quiero que actualicen los datos de la mamá de *{{nombre_comp}}* del grado {{grado}}-{{grupo}}" class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Actualizar</a>
+		    		<a href="https://wa.me/573017495229?text= Quiero que actualicen los datos de la MAMÁ de *{{nombre_comp}}* del grado {{grado}}-{{grupo}}" class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Actualizar</a>
 			</div>
 		</div>
 
 
-		<div class="card mt-2 mb-2 ml-2 mr-2" data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso=${student_pin}'>
+		<div class="card mt-2 mb-2 ml-1 mr-1" data-sheetdb-url='https://sheetdb.io/api/v1/9vnyke5jk0yyo' data-sheetdb-sheet='datosEstudiantes' data-sheetdb-search='pinAcceso=${student_pin}'>
 
 		  	<h5 class="card-header headerComponenteResaltado">
 		  		📝 Acudiente</h5>
@@ -154,7 +206,7 @@
 					  <li class="list-group-item listComponenteResaltado">📧 <b>Email</b> {{email_acud}}</li>
 
 					</ul>
-		    		<a href="https://wa.me/573017495229?text= Quiero que actualicen los datos de la mamá de *{{nombre_comp}}* del grado {{grado}}-{{grupo}}" class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Actualizar</a>
+		    		<a href="https://wa.me/573017495229?text= Quiero que actualicen los datos del ACUDIENTE de *{{nombre_comp}}* del grado {{grado}}-{{grupo}}" class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Actualizar</a>
 			</div>
 		</div>
    		`;
