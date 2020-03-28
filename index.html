@@ -27,9 +27,8 @@
 <!-- START NAV TOP -->
 	<nav class="navbar fixed-top navbar_aApp">
 	  <a class="navbar-brand" href="#perfilEstudiante">
-	  	<span class="iconoNavBar">👤</span>
-	    <!--<img src="/docs/4.4/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">-->
-	  </a>
+		<span class="iconoNavBar"></span>
+	  <img src="https://lh3.googleusercontent.com/-5VBdGyCRAfo/WkZ_wdRsCoI/AAAAAAAAisQ/gISWI7wpTRcEA0eZp3D91nfOStIOMeoywCEwYBhgL/w800/LOGO.png" width="90" height="45" alt="Academia">	  <span class="badge badge-primary">1</span></a>
 	</nav>
 <!-- END NAV TOP -->
 
@@ -61,16 +60,50 @@
 <!-- FIN DE CONTENEDORES DE MÓDULOS -->
 
 
+
 <!-- START NAV BOTTOM -->
 
-	<nav class="navbar navbar-light fixed-bottom navbar_aApp">
-	    <a class="nav-link" href="https://www.academia.net.co/"><span class="iconoNavBar">🏫<span></a>
-	    <a class="nav-link puffOut" href="#seguimientoEstudiante"><span class="iconoNavBar ">📑<span></a>
-	    <a class="nav-link" href="#registro_pagos"><span class="iconoNavBar">💵<span></a>
+	<nav id="navBootom" class="navbar navbar-light fixed-bottom navbar_aApp">
+		<a class="navbar-brand" href="#perfilEstudiante"><span class="iconoNavBar borderIcono">👤</span></a>
+	    <a class="navbar-brand puffOut" href="#seguimientoEstudiante"><span class="iconoNavBar borderIcono ">📑<span></a>
+		<a class="navbar-brand" href="#registro_pagos"><span class="iconoNavBar borderIcono">💵<span></a>
+		<a class="navbar-brand" href="Tel:573017495229"><span class="iconoNavBar borderIcono">📞<span></a>
 	</nav>
 <!-- END NAV BOTTOM -->
 
 </div> <!-- END div class="container"-->
+
+<!-- START FOOT WEB -->
+<div id="navJumbotron" class="jumbotron jumbotron-fluid">
+	<div class="container">
+	  <h1 class="display-4">Te escuchamos...</h1>
+	  <p class="lead">Estamos disponibles para atender sus solicitudes. No dude en usar cualquiera de los canales para tener el gusto de atenderlo.</p>
+
+	  <addres class="lead">
+		Director <a href="mailto:alexredondo@academia.net.co">Esp. Alexander Redondo F.</a><br>
+		Carrera 28 No. 10-45 Barrio Puerta Roja<br>
+		Sincelejo, Sucre, Colombia (CO)<br>
+		Código Postal 70001<br>
+		</address>
+			<a href="Tel:5752743450" ></a>☎ 
+				 Tel&eacute;fono : (+57) 52720074
+		</a><br> 
+			
+		<ul class="list-group list-group-horizontal listUlCell">
+			<li class="list-group-item listCell"><a href="Tel:573017495229" >📱</a></li>
+			<li class="list-group-item listCell"><a href="Tel:573017495229" >Celular : (+57) 301 7495229</a></li>
+			<li class="list-group-item listCell"><a href="Tel:573002835959" >Celular : (+57) 300 2835959</a></li>
+			<li class="list-group-item listCell"><a href="Tel:573022999720" >Celular : (+57) 302 2999720</a></li>
+		  </ul>
+
+			
+			
+		</div>
+
+
+	</div>
+  </div>
+<!-- END FOOT WEB -->
 
 
 <!-- ////////////////////// START SCRIPT //////////////////////-->
@@ -92,7 +125,7 @@ document.getElementById("seguimiento_estudiantes").innerHTML = `
 		<div class="card mt-2 mb-2 ml-1 mr-1" data-sheetdb-url='https://sheetdb.io/api/v1/k0yotk2ghv74z' data-sheetdb-sheet='parvulo' data-sheetdb-search='pinAcceso=${student_pin}' data-sheetdb-sort-by='fechaSort' data-sheetdb-sort-order='desc'>
 
 			<h5 class="card-header">{{tipo_reg}}</h5>
-			<img src="{{foto}}" class="card-img-top" alt="foto del estudiante">
+			<!--<img src="{{foto}}" class="card-img-top" alt="foto del estudiante">-->
 			<div class="card-body">
 				<h5 class="card-title">{{fecha}}</h5>
 					<p class="card-text">{{docente}}
@@ -117,14 +150,15 @@ cambiar variable parvulo
 			<h5 class="card-header">{{transaccion}}: {{valor}}</h5>
 
 			<div class="card-body">
-				<h5 class="card-title">Fecha: {{fecha}}</h5>
-					<p class="card-text">Recibo de pago No. {{cod_recibo}}<br>{{observaciones}}
+				<h5 class="card-title">📅 Fecha: {{fecha}}</h5>
+					<p class="card-text">Comprobante No. {{cod_recibo}}<br>{{observaciones}}
 					</p>
 					<ul class="list-group list-group-flush">
-					<li class="list-group-item lead text-justify" >{{saldo}} {{estado}}</li>
+					<li class="list-group-item lead text-justify" >{{descripcionSaldo}} {{saldo}} {{estado}}</li>
 					<li class="list-group-item lead text-justify" >Intereses: {{intereses}}</li>
 					</ul>
-					<a href="https://wa.me/573017495229?text= Quiero que más información sobre esta transacción _{{registro}}_ del estudiante *{{nombre_comp}}*  class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Comentar</a>
+					<a href="https://wa.me/573017495229?text= Quiero que más información sobre esta transacción _{{transaccion}}: {{valor}}_ del estudiante *{{estudiante}}*  class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Comentar</a>
+					<a href="https://wa.me/573017495229?text= Quiero que más información sobre esta transacción _{{transaccion}}: {{valor}}_ del estudiante *{{estudiante}}*  class="btn btn-primary mt-4"><i class="fab fa-whatsapp"> </i> Pagar por PSE</a>
 					
 			</div>
 		</div>
@@ -141,7 +175,7 @@ cambiar variable parvulo
 
 		  	<div class="card-body">
 		    	<h5 class="card-title">{{grado}} - {{grupo}}</h5>
-		    		<p class="card-text"><b>Tipo de Documento:</b> {{tipo_doc}} <i class="far fa-id-card"></i> No. {{nuip}}.
+		    		<p class="card-text"><b><i class="far fa-id-card"></i> Tipo de Documento:</b> {{tipo_doc}} No. {{nuip}}.
 		    		</p>
 		    		<ul class="list-group list-group-flush">
 					  <li class="list-group-item">⭐ <b>Fecha de Nacimiento:</b> {{fecha_nac}}</li>
@@ -161,7 +195,7 @@ cambiar variable parvulo
 		  
 		  	<div class="card-body">
 		    	<h5 class="card-title">{{nombre_papa}}</h5>
-		    		<p class="card-text"><b>Tipo de Documento:</b> CC <i class="far fa-id-card"></i> No. {{cedula_papa}}.
+		    		<p class="card-text"><b><i class="far fa-id-card"></i> Tipo de Documento:</b> CC No. {{cedula_papa}}.
 		    		</p>
 		    		<ul class="list-group list-group-flush">
 					  <li class="list-group-item"><b>📱 Celular: </b> {{celular_1}}</li>
@@ -179,7 +213,7 @@ cambiar variable parvulo
 		  
 		  	<div class="card-body">
 		    	<h5 class="card-title">{{nombre_mama}}</h5>
-		    		<p class="card-text"><b>Tipo de Documento:</b> CC <i class="far fa-id-card"></i> No. {{cedula_mama}}.
+		    		<p class="card-text"><b><i class="far fa-id-card"></i> Tipo de Documento:</b> CC No. {{cedula_mama}}.
 		    		</p>
 		    		<ul class="list-group list-group-flush">
 					  <li class="list-group-item"><b>📱 Celular: </b> {{celular_2}}</li>
@@ -198,7 +232,7 @@ cambiar variable parvulo
 		  
 		  	<div class="card-body bodyComponenteResaltado">
 		    	<h5 class="card-title">{{acudiente}}</h5>
-		    		<p class="card-text"><b>Tipo de Documento:</b> CC <i class="far fa-id-card"></i> No. {{cedula_acud}}.
+		    		<p class="card-text"><b><i class="far fa-id-card"></i> Tipo de Documento:</b> CC No. {{cedula_acud}}.
 		    		</p>
 		    		<ul class="list-group list-group-flush" >
 		    		  <li class="list-group-item listComponenteResaltado"><b>👩‍👧 Parentesco: </b> {{parenteso}}</li>
