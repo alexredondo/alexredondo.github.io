@@ -1,0 +1,166 @@
+<!-- Botonera colores superior -->
+<!-- STYLE ANIMACIÓN & EDUCA -->
+<style>
+        .col-2 {
+            margin-left: 20px;
+        }
+
+        /* animación */
+        .mymove {
+        animation-duration: 500ms;
+        -webkit-animation-duration: 500ms;
+        animation-fill-mode: both;
+        -webkit-animation-fill-mode: both;
+        animation-name: mymove;
+        -webkit-animation-name: mymove;
+        }
+
+        @keyframes mymove {
+        from {
+        opacity: 0;
+        -webkit-transform: translate(0, -300%); /* Safari */
+        transform: translate(0, -300%);
+
+        }
+        to {
+        opacity: 1;
+        -webkit-transform: translate(0,0); /* Safari */
+        transform: translate(0,0);
+        }
+        }
+
+        .bt_int_q10 {
+            margin:auto;
+            color:#ffffff;
+            font-weight:bold;
+            display:inline-block;
+            padding:4px 8px;
+            font-size:16px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align:center;
+            cursor:pointer;
+            background-image: none;
+            border:1px solid transparent;
+            border-radius:4px;
+            outline: 0;
+            background-color:#52c7b8;
+            height: 40px;
+            width: 180px;
+            margin-bottom: 10px;
+            }
+
+        .bt_int_q10:hover {
+            background: #00675b;
+        }
+</style>
+
+<!-- STYLE PSE -->
+<style>
+    .bt_scratch {
+        margin:auto;
+        color:#ffffff;
+        font-weight:bold;
+        font-family: Arial, Helvetica, sans-serif;
+        display:inline-block;
+        padding:6px 12px;
+        font-size:16px;
+        text-align:center;
+        cursor:pointer;
+        background-image:none;
+        border:1px solid transparent;
+        border-radius:4px;
+        outline: 0;
+        background-color:#2478a0; 
+        height: 40px;width: 180px;
+        }
+    .bt_scratch:hover {
+        background: #0b7dda;
+        }
+</style>
+
+<!-- STYLE WEB COLEGIOS -->
+<style>
+    .bt41{
+    margin:auto;
+    color:#ffffff;
+    font-weight:bold;
+    font-family: Arial, Helvetica, sans-serif;
+    display:inline-block;
+    padding:6px 12px;
+    font-size:16px;
+    text-align:center;
+    cursor:pointer;
+    background-image:none;
+    border:1px solid transparent;
+    border-radius:4px;outline: 0;
+    background-color:#F79393;
+    height: 40px;
+    width:180px;
+    margin-bottom: 10px;
+    }
+
+    .bt41:hover {background: #F24242;}
+
+    .mylink-plataforma:visited {
+        color:#fff;
+        }
+
+    .mylink-plataforma:hover{
+        text-decoration:none;
+        }
+    .mylink-plataforma {
+        text-decoration:none;
+        color:#fff;
+        }
+</style>
+
+<!-- STYLE ACADEMIA APP -->
+<style>
+    .bt3 {
+        margin:auto;
+        color:#ffffff;
+        font-weight:bold;
+        display:inline-block;
+        padding:6px 12px;
+        font-size:16px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align:center;
+        cursor:pointer;
+        background-image:none;
+        border:1px solid transparent;
+        border-radius:4px;
+        outline: 0;
+        background-color:#55acee;
+        height: 40px;
+        width: 180px;
+        }
+    .bt3:hover {
+        background: #0b7dda;
+        }
+</style>
+
+<div class="container1" style="display: flex; justify-content: flex-end; margin-right: 0px;">
+    <div class="row1" style="display: flex; justify-content: end;">
+    
+        <!-- PSE -->
+        <div class="col-2 mymove" style="animation-duration: 1500ms;">
+            <a class="mylink-plataforma" target="_blank" href="https://www.mipagoamigo.com/MPA_WebSite/ServicePayments/StartPayment?id=4510&searchedCategoryId=&searchedAgreementName=ACADEMIA%20DE%20LAS%20AMERICAS">
+            <button class="bt_scratch" title="Pagar por botón PSE">&#128176; Pagar PSE</button></a>
+        </div>
+        
+        <!-- EDUCA -->
+        <div class="col-2 mymove">
+            <a class="mylink-plataforma" href="http://educaevoluciona.com" target="_blank"> <button class="bt_int_q10" title="Ir a Educa">&#128042; Educa</button></a>
+        </div>
+        
+        <!-- WEB COLEGIOS -->
+        <div class="col-2 mymove" style="animation-duration: 1s;"><a class="mylink-plataforma" target="_blank" href="https://www.webcolegios.com/americas/"><button class="bt41" title="Ir a Web Colegios">&#127758; Web Colegios</button></a>
+        </div>
+
+        <!-- ACADEMIA APP -->
+        <div class="col-2 mymove" style="animation-duration: 1500ms;">
+            <a class="mylink-plataforma" target="_blank" href="https://alexredondo.github.io"><button class="bt3" title="Ir al Manual de Convivencia">&#128640; AcademiaApp</button></a>
+        </div>
+
+    </div>
+</div>
