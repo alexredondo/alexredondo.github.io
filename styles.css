@@ -114,4 +114,10 @@ h2, h3 {
 }
 
 /* Estilos card principales iniciales*/
+.linkWhite {
+  color: white!important;
+}
 
+.navbar-brand {
+  margin-right: 0;
+}
