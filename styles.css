@@ -62,7 +62,7 @@ h2, h3 {
 
   }
 
-.contenedorHN {
+.contenedorTitulos {
   border: solid 1px #80bdff;
   box-shadow: -5px 0px 0px 0px lightskyblue;
   border-radius: 5px;
@@ -125,4 +125,12 @@ h2, h3 {
 .card {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+/* colores alternativos badges*/
+.colorAltCoral {
+  background-color: coral;
+}
+.colorAltmediumslateblue {
+  background-color:mediumslateblue;
 }

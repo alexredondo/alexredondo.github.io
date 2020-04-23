@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+	<!-- Required meta tags -->
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+	<title>AcademiaApp | Academia de las Américas</title>
+
+	<!-- BOOSTRAP  -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+	<!-- ESTILOS PROPIOS -->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+	<!-- START SCRIPT SHEETDB.IO -->
+	<script src="https://sheetdb.io/scripts/sheetdb-handlebars-1.1.0.js"></script>
+
+	<!-- START FONTAWESOME -->
+	<script src="https://kit.fontawesome.com/4c4c8bc434.js" crossorigin="anonymous"></script>
+
+	</head>
+<body>
+
+<!-- START NAV TOP -->
+	<nav class="navbar navbar_aApp">
+	  <a class="navbar-brand" href="index.html">
+		<span class="iconoNavBar"></span>
+	  <img src="https://lh3.googleusercontent.com/-5VBdGyCRAfo/WkZ_wdRsCoI/AAAAAAAAisQ/gISWI7wpTRcEA0eZp3D91nfOStIOMeoywCEwYBhgL/w800/LOGO.png" width="90" height="45" alt="Academia">	  <span class="badge badge-primary">1</span></a>
+	</nav>
+<!-- END NAV TOP -->
+
+<div class="container containerAcademia">
+
+	<!-- START NAV BAR -->
+	<div class="card" id="botoneraCursosSuperior"></div>
+	<!-- END NAV BAR -->
+
+	<!-- LOGIN -->
+	<div class="card mt-3 mb-4 ml-1 mr-1 cardPrincipales">
+		<!-- CAMBIAR CURSO -->
+		<h5 class="card-header">🐹 Párvulo</h5>
+		<div class="card-body">
+		<h5 class="card-title">Consulte y verifique la información de su hij@</h5>
+		<p class="card-text">Puede solicitar por el grupo de whatsapp actualización de los datos.</p>
+			<!-- START LOGIN -->
+					<form class="form-inline">
+						<div class="form-group mx-sm-3 mb-2">
+						<label for="sheetdb-id" class="sr-only">Escriba su PIN</label>
+						<input for="sheetdb-id" type="text" name="pinAcceso" class="form-control" placeholder="PIN de 6 caracteres">
+						</div>
+						<button type="submit" type="button" class="btn btn-primary mb-2">Ingresar</button>
+					</form>
+			<!-- END LOGIN -->
+		</div>
+	</div>
+
+	<!-- SALUDO START -->
+	<div class="card" id="aviso"></div>
+
+	<!-- START CONTENEDORES DE MÓDULOS -->
+		<!-- 1. CONTENEDOR SEGUIMIENTO ESTUDIANTES -->
+		<div id="seguimiento_estudiantes"></div> 
+
+		<!-- 2. CONTENEDOR DEL REGISTRO DE PAGOS -->
+		<div id="registro_pagos" class="contenedor_modulos"></div> 
+
+		<!-- 3. CONTENEDOR DE DATOS PERSONALES -->
+		<div id="datos_personales">	</div> 
+
+	<!-- FIN DE CONTENEDORES DE MÓDULOS -->
+
+<!-- START NAV BOTTOM -->
+	<nav id="navBottom" class="navbar navbar-light fixed-bottom navbar_aApp"></nav>
+
+
+</div>
+<!-- END div class="container"-->
+
+<!-- START FOOT WEB -->
+<div id="navJumbotron" class="jumbotron jumbotron-fluid">  </div>
+
+<!-- ////////////////////// START SCRIPT //////////////////////-->
+
+	<script>
+
+	// 1. MÓDULO DE SEGUIMIENTO AL ESTUDIANTE: SPREEDSHEET: alexredondo@academia.net.co => seguimientoDbAcademia
+	// Cambiar nombre de la sheet y de la teacher
+		document.getElementById("seguimiento_estudiantes").innerHTML = `
+		<h2 id="seguimientoEstudiante" class="mt-2 mb-4 ml-1 mr-1"><div class="contenedorTitulos">Seguimiento del Estudiante</div></h2>
+
+	<div class="card mt-2 mb-2 ml-1 mr-1"
+	data-sheetdb-url='https://sheetdb.io/api/v1/2h27x3gq5hbw6'
+	data-sheetdb-sheet='seguimientoParvulo'
+	data-sheetdb-query-string="pinAcceso"
+	data-sheetdb-sort-by='fecha'
+	data-sheetdb-sort-order='desc'>
+
+		<h5 class="card-header">{{tipo_reg}}</h5>
+		<div class="card-body">
+			<h5 class="card-title">{{fecha}}</h5>
+				<p class="card-text"> Claudia Rocha
+				</p>
+				<ul class="list-group list-group-flush">
+				<li class="list-group-item lead text-justify" >📑 {{registro}}</li>
+				</ul>
+				<a class="badge btn btn-primary mt-4" href="https://wa.me/573017495229?text= Quiero más información sobre este registro _{{registro}}_ del estudiante *{{nombre_comp}}*"><i class="fab fa-whatsapp"> </i> Comentar</a>
+				
+		</div>
+	</div>
+	`
+	// 2. MÓDULO DEL REGISTRO DE PAGOS: SPREEDSHEET: alexredondo@academia.net.co => seguimientoDbAcademia
+	// Cambiar nombre de la sheet y de la teacher
+	document.getElementById("seguimiento_estudiantes").innerHTML = `
+		<h2 id="seguimientoEstudiante" class="mt-2 mb-4 ml-1 mr-1"><div class="contenedorTitulos">Seguimiento del Estudiante</div></h2>
+
+	<div class="card mt-2 mb-2 ml-1 mr-1"
+	data-sheetdb-url='https://sheetdb.io/api/v1/2h27x3gq5hbw6'
+	data-sheetdb-sheet='pagos'
+	data-sheetdb-query-string="pinAcceso"
+	data-sheetdb-sort-by='fecha'
+	data-sheetdb-sort-order='asc'>
+
+		<h5 class="card-header">{{tipo_reg}}</h5>
+		<div class="card-body">
+			<h5 class="card-title">{{fecha}}</h5>
+				<p class="card-text"> Claudia Rocha
+				</p>
+				<ul class="list-group list-group-flush">
+				<li class="list-group-item lead text-justify" >📑 {{registro}}</li>
+				</ul>
+				<a class="badge btn btn-primary mt-4" href="https://wa.me/573017495229?text= Quiero más información sobre este registro _{{registro}}_ del estudiante *{{nombre_comp}}*"><i class="fab fa-whatsapp"> </i> Comentar</a>
+				
+		</div>
+	</div>
+	`
+	</script>
+
+	<!-- GENERADOR DE MÓDULOS-->
+	<script src="appModulos.js"></script>
+
+	<!-- START SCRIPT BOOSTRAP-->
+			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	<!-- END SCRIPT BOOSTRAP-->
+
+<!-- END SCRIPT -->
+	</body>
+</html>
+
+
