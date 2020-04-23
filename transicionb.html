@@ -34,75 +34,53 @@
 
 <div class="container containerAcademia">
 
-	<div class="alert alert-info card" role="alert">
-		#QuédateEnCasa  #AcademiaVirtual
-	  </div>
-
 <!-- START NAV BAR -->
 	<div class="card">
 		<div class="card-body">
-			<h5 class="card-title">Tú AcademiaApp</h5>
-			<h6 class="card-subtitle mb-2 text-muted">Encuentre la información de su hij@.</h6>
-			<p class="card-text">✔Observaciones que hacen los docentes. <br> ✔ Los datos que manejamos. <br> ✔ Los pagos realizados. </p>
-		</div>
-		<div class="card-header">
-			<h5 class="card-title">Preescolar</h5>
 			<a href="#" class="badge badge-primary">🐹 Párvulo</a>
 			<a href="#" class="badge badge-success">🐰A Prejardín</a>
 			<a href="#" class="badge badge-danger">🐰B Prejardín</a>
 			<a href="#" class="badge badge-warning">🐻A Jardín</a>
 			<a href="#" class="badge badge-info">🐻B Jardín</a>
-			<a href="#" class="badge badge-info" style="background-color: coral;">🐼A Transición</a>
-			<a href="transicionb.html" class="badge badge-info" style="background-color:mediumslateblue;">🐼B Transición</a>
-		</div>
-		<div class="card-body">
-			<h5 class="card-title">Primaria</h5>
-			<a href="#" class="badge badge-primary">🐶 Primero</a>
-			<a href="#" class="badge badge-success">🐱 Segundo</a>
-			<a href="#" class="badge badge-danger">🐨 Tercero</a>
-			<a href="#" class="badge badge-warning">🦊 Cuarto</a>
-			<a href="#" class="badge badge-info">🐯 Quinto</a>
+			<a href="#" class="badge badge-light">🐼A Transición</a>
+			<a href="#" class="badge badge-dark">🐼B Transición</a>
 		</div>
 	</div>
 <!-- END NAV BAR -->
 
 <!-- START CARD PRINCIPALES -->
-
 <div class="card mt-3 mb-4 ml-1 mr-1 cardPrincipales">
-	<h5 class="card-header">Datos del Estudiante</h5>
+	<h5 class="card-header">🐼 Transición B</h5>
 	<div class="card-body">
 	  <h5 class="card-title">Consulte y verifique la información de su hij@</h5>
 	  <p class="card-text">Puede solicitar por el grupo de whatsapp actualización de los datos.</p>
-	  <button type="button" class="btn btn-info btn-lg" onclick="myFunction()">🧒<span class="linkWhite">Datos</span></button>
+	  	<!-- START LOGIN -->
+				<form class="form-inline">
+					<div class="form-group mx-sm-3 mb-2">
+					<label for="sheetdb-id" class="sr-only">Escriba su PIN</label>
+					<input for="sheetdb-id" type="text" name="pinAcceso" class="form-control" placeholder="PIN de 6 caracteres">
+					</div>
+					<button type="submit" type="button" class="btn btn-primary mb-2">Ingresar</button>
+				</form>
+		<!-- END LOGIN -->
 	</div>
 </div>
 
-<div class="card mt-3 mb-4 ml-1 mr-1 cardPrincipales">
-	<h5 class="card-header">Seguimiento</h5>
-	<div class="card-body">
-	  <h5 class="card-title">Consulte y verifique el seguimiento académico y de convivencia de su hij@</h5>
-	  <p class="card-text">Puede solicitar por el grupo de whatsapp aclaración de la información.</p>
-	  <button type="button" class="btn btn-info btn-lg"> <a class="navbar-brand" href="#perfilEstudiante">📑<span class="linkWhite">Seguimiento</span></a></button>
+<!-- START SALUDO INICIAL -->
+<div class="card">
+	<div class="card-header">
+	  ¡ Gracias Familias de Academia !
 	</div>
-</div>
+	<div class="card-body">
+	  <blockquote class="blockquote mb-0">
+		<p>Usted y su familia hace realidad este proyecto. <br> No hay palabras para agradecer tanto apoyo. <br> Gracias por ser valiente y superar el miedo. <br> Gracias por no dejarnos.</p>
+		<footer class="blockquote-footer">Alex Redondo <cite title="Source Title">Director</cite></footer>
+	  </blockquote>
+	</div>
+  </div>
+<!-- END SALUDO INICIAL -->
 
-<div class="card mt-3 mb-4 ml-1 mr-1 cardPrincipales">
-	<h5 class="card-header">Estado de cuenta</h5>
-	<div class="card-body">
-	  <h5 class="card-title">Consulte y verifique los pagos realizados al colegio.</h5>
-	  <p class="card-text">Puede solicitar por el grupo de whatsapp aclaración de la información.</p>
-	  <button type="button" class="btn btn-info btn-lg"> <a class="navbar-brand" href="#perfilEstudiante">💵<span class="linkWhite">Pagos</span></a></button>
-	</div>
-</div>
 
-<div class="card mt-3 mb-4 ml-1 mr-1 cardPrincipales">
-	<h5 class="card-header">Hable con el Director</h5>
-	<div class="card-body">
-	  <h5 class="card-title">No dude en llamar para atender sus inquietudes.</h5>
-	  <p class="card-text">No se quede con las dudas. Llame y con mucho gusto hablamos.</p>
-	  <button type="button" class="btn btn-info btn-lg"> <a class="navbar-brand" href="#perfilEstudiante">📞<span class="linkWhite">Contacto</span></a></button>
-	</div>
-</div>
 
 <!-- START CONTENEDORES DE MÓDULOS -->
 <!-- 1. CONTENEDOR SEGUIMIENTO ESTUDIANTES -->
@@ -163,6 +141,36 @@
 
 
 <!-- ////////////////////// START SCRIPT //////////////////////-->
+
+<script>
+
+// 1. MÓDULO DE SEGUIMIENTO AL ESTUDIANTE: SPREEDSHEET: alexredondo@academia.net.co => seguimientoDbAcademia
+
+	document.getElementById("seguimiento_estudiantes").innerHTML = `
+	<h2 id="seguimientoEstudiante" class="mt-2 mb-4 ml-1 mr-1"><div class="contenedorHN">Seguimiento del Estudiante</div></h2>
+
+<div class="card mt-2 mb-2 ml-1 mr-1"
+  data-sheetdb-url='https://sheetdb.io/api/v1/k0yotk2ghv74z'
+  data-sheetdb-sheet='transiciónB'
+  data-sheetdb-query-string="pinAcceso"
+  data-sheetdb-sort-by='fechaSort'
+  data-sheetdb-sort-order='desc'>
+
+	<h5 class="card-header">{{tipo_reg}}</h5>
+	<div class="card-body">
+		<h5 class="card-title">{{fecha}}</h5>
+			<p class="card-text">{{docente}}
+			</p>
+			<ul class="list-group list-group-flush">
+			<li class="list-group-item lead text-justify" >📑 {{registro}}</li>
+			</ul>
+			<a class="btn btn-primary mt-4" href="https://wa.me/573017495229?text= Quiero más información sobre este registro _{{registro}}_ del estudiante *{{nombre_comp}}*"><i class="fab fa-whatsapp"> </i> Comentar</a>
+			
+	</div>
+</div>`
+</script>
+
+
 
 
 

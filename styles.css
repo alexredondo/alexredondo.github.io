@@ -31,7 +31,6 @@ Light : #d9ebff*/
 
 
 .containerAcademia {
-	margin-top: 80px;
 	margin-bottom: 80px;
 }
 /*Resaltar una card. Ejemplo:Acudiente*/
@@ -120,4 +119,10 @@ h2, h3 {
 
 .navbar-brand {
   margin-right: 0;
+}
+
+/* Estilos card*/
+.card {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
