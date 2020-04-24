@@ -17,21 +17,26 @@
 ;
     document.getElementById("aviso").innerHTML = `
  
-            <div class="card-header">
-                Estimadas familias !
-            </div>
-            <div class="card-body">  
-            <blockquote class="blockquote mb-0">
-                    <p>Usted y su familia hace realidad este proyecto. <br><br> No hay palabras para agradecer tanto apoyo. <br><br> Gracias por ser valiente y superar el miedo. <br><br> Gracias por no dejarnos.</p>
-                    <footer class="blockquote-footer">Alex Redondo <cite title="Source Title">Director</cite></footer>
-            </blockquote>
-        `
+        <div class="card-header">
+        🤝Estimadas familias !
+        </div>
+    <div class="card-body">  
+    <blockquote class="blockquote mb-0">
+            <ul>
+            <li>Usted y su familia hace realidad este proyecto.</li>
+            <li>No hay palabras para agradecer tanto apoyo.</li>
+            <li>Gracias por ser valiente y superar el miedo.</li> 
+            <li>Gracias por no dejarnos.</li>
+            <footer class="blockquote-footer">Alex Redondo <cite title="Source Title">Director</cite></footer>
+    </blockquote>
+    </div>
+    `
     ;
 // NAV BOTTOM
     document.getElementById("navBottom").innerHTML = `
-    <a class="navbar-brand" href="#perfilEstudiante"><span class="iconoNavBar borderIcono">👤</span></a>
+    <a class="navbar-brand" href="#perfilEstudiante"><span class="iconoNavBar borderIcono">🧒</span></a>
     <a class="navbar-brand puffOut" href="#seguimientoEstudiante"><span class="iconoNavBar borderIcono ">📑<span></a>
-    <a class="navbar-brand" href="#registro_pagos"><span class="iconoNavBar borderIcono">💵<span></a>
+    <a class="navbar-brand" href="#registroPagos"><span class="iconoNavBar borderIcono">💵<span></a>
     <a class="navbar-brand" href="Tel:573017495229"><span class="iconoNavBar borderIcono">📞<span></a>
     `
 ;
