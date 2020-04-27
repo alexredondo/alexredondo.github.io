@@ -17,8 +17,8 @@
 <script>
     var contenido = document.querySelector('#contenido')
         function traer(){
-            fetch('text.txt')
-            .then(res=> res.text())
+            fetch('https://firebasestorage.googleapis.com/v0/b/academiaapp-84f02.appspot.com/o/recaudosDbAcademia%20-%20recaudo.json?alt=media&token=1012806a-9ada-44d9-9f3b-0ce39bb488d9')
+            .then(res=> res.json())
             .then(data =>{
                 console.log(data)
             })
