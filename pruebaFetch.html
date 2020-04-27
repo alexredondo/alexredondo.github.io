@@ -18,10 +18,10 @@
     var contenido = document.querySelector('#contenido')
         function traer(){
             fetch('text.txt')
-            .then(res=> {
-                console.log(res)
+            .then(res=> res.text())
+            .then(data =>{
+                console.log(data)
             })
-
         }
 
 </script>
