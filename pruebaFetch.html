@@ -9,13 +9,13 @@
     <div class="container">
         <button onclick="traer()">Obtener</button>
 
-        <div class="contenido">
+        <div id="contenido">
             
 
         </div>
     </div>
 <script>
-    var contenido = document.querySelector('contenido')
+    var contenido = document.querySelector('#contenido')
         function traer(){
             fetch('text.txt')
             .then(res=> {
