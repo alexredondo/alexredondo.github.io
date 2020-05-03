@@ -20,10 +20,24 @@
             fetch('recaudosDbAcademia.json')
             .then(res=> res.json())
             .then(data =>{
-                console.log(data.results['0'].estudiante)
-            })
-        }
+            console.log(data.results['0'].estudiante)
+            console.log(data.results['0'].nuip)
+ 
 
+            let vals = data;
+            function consultaEst(el){
+                return (el === '1103747446')
+            }
+            
+            vals = vals.filter(consultaEst);
+            console.log(vals);
+ 
+             })    
+        }
+        
+ 
+
+        
 </script>
 </body>
 </html>
